@@ -1,0 +1,18 @@
+<div class="container">
+  <h2 class="title">Image Finder</h2>
+  <mat-form-field class="query-box">
+    <input matInput placeholder="Type your search" [(ngModel)]="query">
+  </mat-form-field>
+
+  <mat-form-field class="query-box">
+    <input matInput type="number" placeholder="Number of results" [(ngModel)]="size">
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="submitSearch()">Submit</button>
+  <!--
+  <div class="image-container">
+    <app-image *ngFor="let image of images" [data]="image"></app-image>
+  </div>-->
+  <div class="gallery-container">
+    <gallery #gallery [items]="imagesGallery"></gallery>
+  </div>
+</div>

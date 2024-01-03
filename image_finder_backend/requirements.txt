@@ -1,0 +1,6 @@
+selenium
+requests
+PIL
+flask
+flask_cors
+flask_restful

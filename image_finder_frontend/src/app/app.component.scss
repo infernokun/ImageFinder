@@ -1,0 +1,65 @@
+/* app.component.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #121212; /* Dark background color */
+  color: #ffffff; /* Light text color */
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.query-box {
+  width: 300px;
+  margin-bottom: 20px; /* Add some bottom margin to separate the inputs */
+}
+
+/* Dark mode styles for Angular Material components */
+.mat-form-field {
+  color: #ffffff; /* Light text color */
+}
+
+.mat-input-element {
+  caret-color: #ffffff; /* Light caret color */
+  color: #ffffff; /* Light text color */
+}
+
+.mat-focused .mat-form-field-underline {
+  background-color: #ffffff; /* Light underline color when focused */
+}
+
+.mat-raised-button {
+  background-color: #2196f3; /* Primary color for the button */
+  color: #ffffff; /* Light text color for the button */
+}
+
+.mat-raised-button:hover {
+  background-color: #1976d2; /* Darker shade on hover */
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Adjust the gap between images */
+}
+
+.app-image {
+  width: calc(33.33% - 10px); /* Adjust the width based on your layout */
+  height: 200px; /* Set a fixed height for the container */
+  overflow: hidden; /* Hide overflow to keep a consistent height */
+  border: 1px solid #ddd; /* Optional: Add a border for separation */
+  box-sizing: border-box; /* Include borders and padding in the width calculation */
+}
+
+gallery {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+
