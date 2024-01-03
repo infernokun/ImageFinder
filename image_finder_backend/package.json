@@ -1,0 +1,21 @@
+{
+  "name": "image_finder_backend",
+  "version": "1.0.0",
+  "description": "Python Flask Application",
+  "main": "main.py",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "python main.py",
+    "install": "pip install -r requirements.txt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/infernokun/ImageFinder.git"
+  },
+  "author": "InfernoKun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/infernokun/ImageFinder/issues"
+  },
+  "homepage": "https://github.com/infernokun/ImageFinder#readme"
+}

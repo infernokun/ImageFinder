@@ -1,5 +1,3 @@
-from bing import download_images_bing_highres
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -96,12 +94,15 @@ def get_images_from_google(query="", max_images=5, delay=2):
         for image in image_urls:
             if ".png" in image:
                 purged_urls.append(f'{image.split(".png")[0]}.png')
-            if ".jpg" in image:
+            elif ".jpg" in image:
                 purged_urls.append(f'{image.split(".jpg")[0]}.jpg')
-            if ".jpeg" in image:
+            elif ".jpeg" in image:
                 purged_urls.append(f'{image.split(".jpeg")[0]}.jpeg')
-            if ".webp" in image:
+            elif ".webp" in image:
                 purged_urls.append(f'{image.split(".webp")[0]}.webp')
+            else:
+                if requests.get(image).status_code == 200 and image not in purged_urls:
+                    purged_urls.append(image)
                 
     wd.close() 
     wd.quit()                   

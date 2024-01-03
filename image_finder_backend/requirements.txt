@@ -1,6 +1,7 @@
 selenium
 requests
-PIL
+Pillow
 flask
 flask_cors
 flask_restful
+tqdm
