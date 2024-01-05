@@ -36,7 +36,11 @@ import { GALLERY_CONFIG, GalleryConfig, GalleryModule } from 'ng-gallery';
     provide: GALLERY_CONFIG,
     useValue: {
       autoHeight: true,
-      imageSize: 'cover'
+      imageSize: 'cover',
+      nav: true,
+      autoWidth: true,
+      itemAutosize: true,
+      thumbAutosize: true,
     } as GalleryConfig
   }],
   bootstrap: [AppComponent]

@@ -1,18 +1,39 @@
 <div class="container">
-  <h2 class="title">Image Finder</h2>
-  <mat-form-field class="query-box">
-    <input matInput placeholder="Type your search" [(ngModel)]="query">
-  </mat-form-field>
+  <div class="left-side">
+    <!-- Left Side Content -->
+    <h2 class="title">Image Finder</h2>
+    <mat-form-field class="query-box">
+      <input matInput placeholder="Type your search" [(ngModel)]="query">
+    </mat-form-field>
 
-  <mat-form-field class="query-box">
-    <input matInput type="number" placeholder="Number of results" [(ngModel)]="size">
-  </mat-form-field>
-  <button mat-raised-button color="primary" (click)="submitSearch()">Submit</button>
-  <!--
-  <div class="image-container">
-    <app-image *ngFor="let image of images" [data]="image"></app-image>
-  </div>-->
-  <div class="gallery-container">
-    <gallery #gallery [items]="imagesGallery"></gallery>
+    <mat-form-field class="query-box">
+      <input matInput type="number" placeholder="Number of results" [(ngModel)]="size">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="submitSearch()">Submit</button>
+
+    <div>
+      <textarea [(ngModel)]="inputText" placeholder="Enter a list of strings"></textarea>
+      <button (click)="convertToList()">Convert to List</button>
+
+      <ul *ngIf="outputList.length > 0">
+        <li *ngFor="let item of outputList">{{ item }}</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="right-side">
+    <!-- Right Side Content -->
+    <div>
+      <button mat-raised-button color="primary" (click)="downloadCurrentImage()">Download Current Image</button>
+      <button mat-raised-button color="primary" (click)="downloadCurrentImage(true)">Download All Images</button>
+    </div>
+    <div>
+      Total Images: {{found}}
+    </div>
+    <div class="gallery-container">
+      <gallery #gallery [items]="imagesGallery" (itemsChange)="trackIndex($event)" (indexChange)="trackIndex($event)">
+      </gallery>
+    </div>
   </div>
 </div>
